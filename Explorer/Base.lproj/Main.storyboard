@@ -1,25 +1,166 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4hk-Xz-4oa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ConversionVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="ConversionVC" customClass="ConversionVC" customModule="Explorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-Zh-0JF">
+                                <rect key="frame" x="52" y="28" width="271" height="70"/>
+                                <color key="textColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitTextFieldUserEnteredValue:" destination="BYZ-38-t0r" eventType="editingChanged" id="qNY-mP-yEW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7lH-w7-CF3"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-QT-zXI">
+                                <rect key="frame" x="137" y="261" width="101" height="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
+                                <color key="textColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees Celsius" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80U-nO-uqF">
+                                <rect key="frame" x="60" y="334" width="255" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="0.87843137250000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83V-Uo-VTh">
+                                <rect key="frame" x="52" y="110" width="271" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-fn-blF">
+                                <rect key="frame" x="149" y="164" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="7UQ-HX-4Mc"/>
+                                    <constraint firstAttribute="height" constant="109" id="OOH-IP-BuD"/>
+                                    <constraint firstAttribute="width" constant="109" id="QzG-Zx-BaD"/>
+                                    <constraint firstAttribute="width" constant="77" id="p5T-Tp-z7L"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OOH-IP-BuD"/>
+                                        <exclude reference="QzG-Zx-BaD"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4Pl-Zh-0JF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0qS-20-H8N"/>
+                            <constraint firstItem="5mb-fn-blF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3rd-j1-S3n"/>
+                            <constraint firstItem="5mb-fn-blF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Rr-tC-3Js"/>
+                            <constraint firstItem="5mb-fn-blF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CMQ-1Q-Pne"/>
+                            <constraint firstItem="83V-Uo-VTh" firstAttribute="top" secondItem="4Pl-Zh-0JF" secondAttribute="bottom" constant="12" id="Hly-EZ-Ub4"/>
+                            <constraint firstItem="80U-nO-uqF" firstAttribute="top" secondItem="cdQ-QT-zXI" secondAttribute="bottom" constant="10" id="M15-bw-ZUk"/>
+                            <constraint firstItem="cdQ-QT-zXI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OQv-RX-JRN"/>
+                            <constraint firstItem="80U-nO-uqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ath-fa-SOZ"/>
+                            <constraint firstItem="cdQ-QT-zXI" firstAttribute="top" secondItem="5mb-fn-blF" secondAttribute="bottom" constant="20" id="cEd-Om-V5T"/>
+                            <constraint firstItem="4Pl-Zh-0JF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cnK-k1-07F"/>
+                            <constraint firstItem="80U-nO-uqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ic2-Tl-RMf"/>
+                            <constraint firstItem="5mb-fn-blF" firstAttribute="top" secondItem="83V-Uo-VTh" secondAttribute="bottom" constant="18" id="ikc-eT-LfL"/>
+                            <constraint firstItem="83V-Uo-VTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="klu-tw-yH8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="80U-nO-uqF" secondAttribute="bottom" constant="30" id="qq7-lE-WJK"/>
+                            <constraint firstItem="80U-nO-uqF" firstAttribute="top" secondItem="cdQ-QT-zXI" secondAttribute="bottom" constant="3" id="tT4-Pf-q3S"/>
+                            <constraint firstItem="cdQ-QT-zXI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vAJ-Rf-Oae"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Rr-tC-3Js"/>
+                                <exclude reference="CMQ-1Q-Pne"/>
+                                <exclude reference="vAJ-Rf-Oae"/>
+                                <exclude reference="M15-bw-ZUk"/>
+                                <exclude reference="ath-fa-SOZ"/>
+                                <exclude reference="qq7-lE-WJK"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="D8t-c4-vv3" appends="YES" id="Qnx-lX-KGP"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Conversion" image="ConvertIcon" id="xkX-E3-9aM"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="cdQ-QT-zXI" id="m6z-9f-fUw"/>
+                        <outlet property="fahrenheitTextField" destination="4Pl-Zh-0JF" id="Tbt-Mu-Sfb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="D8t-c4-vv3">
+                    <connections>
+                        <action selector="dismissKeyboard" destination="BYZ-38-t0r" id="ASw-Ce-Gxc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="602.5" y="313.5"/>
+        </scene>
+        <!--WebVC-->
+        <scene sceneID="jtq-9V-oeX">
+            <objects>
+                <viewController id="cgB-fH-2Ly" userLabel="WebVC" customClass="WebVC" customModule="Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <webView key="view" contentMode="scaleToFill" id="nFp-0t-qf0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                    </webView>
+                    <tabBarItem key="tabBarItem" title="Web" image="globe" id="Y5P-Du-jSV"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zR7-7D-ESg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692.5" y="313.5"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="eUV-k8-4zo">
+            <objects>
+                <viewController id="gvu-36-59I" userLabel="MapVC" customClass="MapVC" customModule="Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="ajs-fu-NBy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVp-dW-gDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="-545"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DRT-Sh-ZQf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4hk-Xz-4oa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VK8-Q0-A0y">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tp2-oG-qJW"/>
+                        <segue destination="gvu-36-59I" kind="relationship" relationship="viewControllers" id="n3q-jQ-XZx"/>
+                        <segue destination="cgB-fH-2Ly" kind="relationship" relationship="viewControllers" id="9aw-gJ-7Vv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKB-M5-byG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="49" height="33"/>
+        <image name="MapIcon" width="49" height="33"/>
+        <image name="arrowIcon" width="70" height="69"/>
+        <image name="globe" width="20" height="20"/>
+    </resources>
 </document>
